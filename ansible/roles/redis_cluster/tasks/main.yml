@@ -1,0 +1,10 @@
+---
+- name: "Copy docker compose file for redis"
+  template:
+    src: "../templates/docker-compose.yml.j2"
+    dest: ./docker-compose.yml
+    force: true
+    owner: root
+    mode: 0644
+  notify:
+    - compose_up
